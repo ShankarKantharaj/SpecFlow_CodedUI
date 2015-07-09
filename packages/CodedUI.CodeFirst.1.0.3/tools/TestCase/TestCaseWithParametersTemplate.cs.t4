@@ -1,0 +1,81 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="T4Scaffolding.Core.Templating" #>
+<#
+	IList ParameterValues = (IList)Model.TestCase.parametervalues;
+	IList ParameterNames = (IList)Model.TestCase.parameters;
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Microsoft.VisualStudio.TestTools.UITesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace <#= Model.Namespace #> {
+
+	[CodedUITest]
+	public class <#= Model.TestCase.name #> {
+   
+   		protected IList<object> Iterations;
+		
+		[TestInitialize]
+        public void Initialize() {
+            Iterations = new[] {
+				<# for(var i=0;i<ParameterValues.Count; i++ ){ #>
+
+				new {
+				<# for(var x=0; x<ParameterNames.Count;x++) { #>
+                	<#
+                	var parameterName = (string)ParameterNames[x];
+                	var parameterValue = ((DynamicViewModel)ParameterValues[i])[parameterName]; #>
+
+					<#= parameterName.ToString().Replace("-","_") #> = "<#=  Escape(parameterValue) #>"<# if((x+1)<ParameterNames.Count){ #>,<# } #>
+				<# } /*for*/ #>
+
+				}<# if((i+1)<ParameterValues.Count){ #>,<# } #>
+				<# } /*for*/ #>			
+
+			};
+		}
+		
+		<# for(var i=0;i<ParameterValues.Count; i++ ){ #>   
+		[TestMethod]
+		[WorkItem(<#= Model.TestCase.id #>)]
+		[Description("<#= Escape(Model.TestCase.title) #>")]
+		[Owner("<#= Environment.UserName #>")]
+		public void <#= Model.TestCase.testmethodname #>Iteration<#=i+1#>() {
+			<#= Model.TestCase.testmethodname #>(Iterations[<#=i#>]);
+		}
+		<# } #>
+
+		private void <#= Model.TestCase.testmethodname #>(dynamic parameters) {
+	     
+			<# foreach(DynamicViewModel step in (IEnumerable)Model.TestCase.steps) { #>
+			<# if(step["action"] != null){ #>
+			//ACTION: <#= step["action"]#>
+			<# } #>
+			<# if(step["assert"] != null){ #>
+			//ASSERT: <#= step["assert"]#>
+			Assert.Inconclusive("<#= Escape(step["assert"]) #>");
+			<# } #>
+			<# if(step["shared"] != null){ #>
+			//SHARED: <#= step["shared"]#>
+			<# } #>
+			
+			<# } #>
+		}
+	}
+}
+<#+
+	string Escape(object s){
+		if(s is string){
+			return ((string)s).Replace("\"","\\\"");
+		}
+		return string.Empty;
+	}
+#>

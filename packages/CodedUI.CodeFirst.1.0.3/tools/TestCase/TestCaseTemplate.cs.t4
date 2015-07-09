@@ -1,0 +1,40 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Microsoft.VisualStudio.TestTools.UITesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace <#= Model.Namespace #> {
+
+	[CodedUITest]
+	public class <#= Model.TestCase.name #> {
+   
+		[TestMethod]
+		[WorkItem(<#= Model.TestCase.id #>)]
+		[Description("<#= Model.TestCase.title.ToString().Replace("\"","\\\"") #>")]
+		[Owner("<#= Environment.UserName #>")]
+		public void <#= Model.TestCase.testmethodname #>() {
+	     
+			<# foreach(T4Scaffolding.Core.Templating.DynamicViewModel step in (IEnumerable)Model.TestCase.steps) { #>
+			<# if(step["action"] != null){ #>
+			//ACTION: <#= step["action"]#>
+			<# } #>
+			<# if(step["assert"] != null){ #>
+			//ASSERT: <#= step["assert"]#>
+			Assert.Inconclusive("<#= step["assert"].ToString().Replace("\"","\\\"") #>");
+			<# } #>
+			<# if(step["shared"] != null){ #>
+			//SHARED: <#= step["shared"]#>
+			<# } #>
+			
+			<# } #>
+		}
+	}
+}

@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5BE60263-C6EE-4400-9982-A14261E77862}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ARUP_BDD_Automation_Project</RootNamespace>
+    <AssemblyName>ARUP_BDD_Automation_Project</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>True</IsCodedUITest>
+    <TestProjectType>CodedUITest</TestProjectType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' Or '$(VisualStudioVersion)' == '11.0'">
+      <ItemGroup>
+        <Reference Include="UIAutomationTypes" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10311.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Services.TestTools.UITesting.Html">
+      <HintPath>..\packages\CodedUI.CodeFirst.1.0.3\lib\net40\Microsoft.Services.TestTools.UITesting.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01_Manager_Tier\EnvironmentFiles\GlbVar.cs" />
+    <Compile Include="02_Utility_Tier\CommonFunctions.cs" />
+    <Compile Include="02_Utility_Tier\ExcelUtil.cs" />
+    <Compile Include="02_Utility_Tier\Reporter.cs" />
+    <Compile Include="02_Utility_Tier\WebUtility.cs" />
+    <Compile Include="03_Application_Tier\ApplicationTests\CodedUITest1.cs" />
+    <Compile Include="03_Application_Tier\ApplicationTests\MasterTest.cs" />
+    <Compile Include="03_Application_Tier\ApplicationTests\Steps\SpecFlowHooks.cs" />
+    <Compile Include="03_Application_Tier\ApplicationTests\Steps\Steps_Guru99.cs" />
+    <Compile Include="03_Application_Tier\Features\GoogleDrive.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoogleDrive.feature</DependentUpon>
+    </Compile>
+    <Compile Include="03_Application_Tier\ApplicationTests\Steps\GoogleDrive_UploadFileSteps.cs" />
+    <Compile Include="03_Application_Tier\Features\Guru99.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Guru99.feature</DependentUpon>
+    </Compile>
+    <Compile Include="03_Application_Tier\PageObjects\AbstractPage.cs" />
+    <Compile Include="03_Application_Tier\PageObjects\AddNewCustPage.cs" />
+    <Compile Include="03_Application_Tier\PageObjects\CustRegistPage.cs" />
+    <Compile Include="03_Application_Tier\PageObjects\HomePage.cs" />
+    <Compile Include="03_Application_Tier\PageObjects\LoginPage.cs" />
+    <Compile Include="CodedUITest2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecFlowFeature1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="StepDefinition1.cs" />
+    <Compile Include="UIMap.cs">
+      <DependentUpon>UIMap.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UIMap.Designer.cs">
+      <DependentUpon>UIMap.uitest</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GeneralUIMap.cs" />
+    <Compile Include="UI\GeneralUIMap.Designer.cs" />
+    <Compile Include="UI\ScientificUIMap.cs" />
+    <Compile Include="UI\ScientificUIMap.Designer.cs" />
+    <Compile Include="UI\StandardUIMap.cs" />
+    <Compile Include="UI\StandardUIMap.Designer.cs" />
+    <Compile Include="UI\UIMapLoader\Calculator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="01_Manager_Tier\EnvironmentFiles\EnvironmentConfig.xlsx" />
+    <None Include="03_Application_Tier\Features\GoogleDrive.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GoogleDrive.feature.cs</LastGenOutput>
+    </None>
+    <None Include="03_Application_Tier\Features\Guru99.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Guru99.feature.cs</LastGenOutput>
+    </None>
+    <None Include="03_Application_Tier\TestData\TestData.xlsx" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="UIMap.uitest" />
+    <None Include="UI\GeneralUIMap.uitest" />
+    <None Include="UI\ScientificUIMap.uitest" />
+    <None Include="UI\StandardUIMap.uitest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="04_Results_Tier\Backup\New folder\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-44-31_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-49-00_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-52-39_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-57-48_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-17-55_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-19-02_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-22-14_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-01_PM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-01_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-01_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-17_PM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-17_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-17_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-44_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-29-36_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-29-36_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_09-May-2015_11-24-36_PM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_09-May-2015_11-24-36_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_09-May-2015_11-24-36_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_09-May-2015_11-25-15_PM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_09-May-2015_11-25-15_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_09-May-2015_11-25-15_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-00-46_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-00-46_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-00-46_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-02-44_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-02-44_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-02-44_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-13-55_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-13-55_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-13-55_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-15-58_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-15-58_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-15-58_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-18-27_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-18-27_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-18-27_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-18-41_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-18-41_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-18-41_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-20-52_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-20-52_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-20-52_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-45-38_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-45-38_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-45-38_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-50-26_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-50-26_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-50-26_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-52-21_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-52-21_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-52-21_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-53-55_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_08-53-55_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_06-08-11_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_06-08-11_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_06-47-41_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_06-47-41_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_07-20-07_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_07-20-07_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_07-26-45_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_07-26-45_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_07-38-36_PM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_07-38-36_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_08-17-11_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_09-31-22_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_09-37-02_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_10-35-39_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_10-39-10_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_10-40-57_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-02-36_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-21-28_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-48-46_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-51-41_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-54-17_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_10-28-18_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_10-28-18_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_10-28-18_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_10-29-27_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_10-29-27_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-05-28_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-05-28_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-05-28_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-09-05_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-09-05_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-09-05_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-23-06_AM\HTML\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-23-06_AM\SCREENSHOTS\" />
+    <Folder Include="04_Results_Tier\Backup\Run_12-May-2015_12-23-06_AM\TEXT\" />
+    <Folder Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\TEXT\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="01_Manager_Tier\EnvironmentFiles\Style.CSS" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-44-31_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-44-31_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-44-31_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-49-00_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-49-00_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-49-00_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-52-39_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-52-39_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-52-39_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-57-48_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-57-48_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_10-57-48_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-17-55_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-17-55_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-17-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-19-02_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-19-02_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-19-02_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-22-14_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-22-14_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-22-14_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-01_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-17_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-44_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-44_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-26-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-29-36_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-29-36_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_02-Jun-2015_11-34-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_06-Jun-2015_02-51-44_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_05-40-09_PM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_08-20-52_AM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_08-45-38_AM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_08-50-26_AM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_08-52-21_AM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_08-53-55_AM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_08-53-55_AM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_09-33-34_AM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-40-39_PM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_10-May-2015_11-45-44_PM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\HTML\ARUP - Sharepoint_TestEnv1-_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-08-48_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\HTML\ARUP - Sharepoint_TestEnv1-_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-11-31_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\HTML\ARUP - Sharepoint_TestEnv1-_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_02-17-10_PM\SCREENSHOTS\ARUP - Sharepoint-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_06-08-11_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_06-08-11_PM\HTML\ARUP - Sharepoint_TestEnv1-_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_06-47-41_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_06-47-41_PM\HTML\ARUP - Sharepoint_TestEnv1-Manager Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_07-20-07_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_07-20-07_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_07-26-45_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_07-26-45_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_07-38-36_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_07-38-36_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_08-17-11_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_08-17-11_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_08-17-11_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-31-22_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-31-22_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-31-22_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-31-22_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-37-02_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-37-02_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-37-02_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_09-37-02_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-35-39_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-35-39_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-35-39_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-35-39_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-35-39_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-39-10_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-39-10_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-39-10_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-39-10_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-39-10_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-40-57_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-40-57_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-40-57_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_10-40-57_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-02-36_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-02-36_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-02-36_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-02-36_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-21-28_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-21-28_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-21-28_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-21-28_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-21-28_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-28-55_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-32-18_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-40-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-48-46_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-48-46_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-48-46_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-48-46_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-51-41_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-51-41_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-51-41_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-51-41_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-54-17_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-54-17_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-54-17_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-54-17_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_11-56-08_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-07-32_PM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-11-34_PM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\HTML\_-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\SCREENSHOTS\--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\SCREENSHOTS\--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\SCREENSHOTS\--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\SCREENSHOTS\--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\SCREENSHOTS\--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\SCREENSHOTS\--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-14-11_PM\__Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\HTML\ARUP - Sharepoint_TestEnv1-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\SCREENSHOTS\ARUP - Sharepoint--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\SCREENSHOTS\ARUP - Sharepoint--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\SCREENSHOTS\ARUP - Sharepoint--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\SCREENSHOTS\ARUP - Sharepoint--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\SCREENSHOTS\ARUP - Sharepoint--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-17-32_PM\SCREENSHOTS\ARUP - Sharepoint--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\HTML\ARUP - Sharepoint_TestEnv1-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\SCREENSHOTS\ARUP - Sharepoint--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\SCREENSHOTS\ARUP - Sharepoint--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\SCREENSHOTS\ARUP - Sharepoint--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\SCREENSHOTS\ARUP - Sharepoint--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\SCREENSHOTS\ARUP - Sharepoint--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-27-17_PM\SCREENSHOTS\ARUP - Sharepoint--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\HTML\ARUP - Sharepoint_TestEnv1-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\SCREENSHOTS\ARUP - Sharepoint--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\SCREENSHOTS\ARUP - Sharepoint--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\SCREENSHOTS\ARUP - Sharepoint--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\SCREENSHOTS\ARUP - Sharepoint--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\SCREENSHOTS\ARUP - Sharepoint--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-38-54_PM\SCREENSHOTS\ARUP - Sharepoint--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\ARUP - Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\HTML\ARUP - Sharepoint_TestEnv1-_.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\SCREENSHOTS\ARUP - Sharepoint--0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\SCREENSHOTS\ARUP - Sharepoint--1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\SCREENSHOTS\ARUP - Sharepoint--2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\SCREENSHOTS\ARUP - Sharepoint--3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\SCREENSHOTS\ARUP - Sharepoint--4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_11-May-2015_12-47-39_PM\SCREENSHOTS\ARUP - Sharepoint--5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-28-18_AM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-29-27_AM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-29-27_AM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_10-30-37_AM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_12-05-28_AM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_12-09-05_AM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Backup\Run_12-May-2015_12-23-06_AM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\ARUP-Sharepoint_TestEnv1_Execution_Summary.HTML" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\HTML\ARUP-Sharepoint_TestEnv1-Manager_Account_TC1.HTML" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-0.png" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-1.png" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-2.png" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-3.png" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-4.png" />
+    <Content Include="04_Results_Tier\Run_06-Jun-2015_07-34-26_PM\SCREENSHOTS\ARUP-SharepointManager_Account-SC1TC1-5.png" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
